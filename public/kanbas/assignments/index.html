@@ -1,0 +1,173 @@
+<!DOCTYPE html> <html lang="en"> <head>
+    <meta charset="UTF-8">
+    <title>Assignments</title> 
+</head>
+
+<body>
+    <!-- <div id="root"></div> -->
+
+    <table border="0" width="100%">
+        <!-- Row to define the four columns -->
+        <tr>
+            <!-- First Column: Kanbas Navigation Sidebar -->
+            <td valign="top">
+                <h2>Kanbas Navigation</h2>
+                <ul>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Inbox</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Studio</a></li>
+                    <li><a href="#">Commons</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </td>
+    
+            <!-- Second Column: Course Navigation Sidebar -->
+            <td valign="top">
+                <h2>Course Navigation</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Modules</a></li>
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom Meetings</a></li>
+                    <li><a href="#">Assignments</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="#">Grades</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Panopto Video</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Rubrics</a></li>
+                    <li><a href="#">Outcomes</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Syllabus</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </td>
+
+            <!-- Third Column: Assignments Screen -->
+            <td valign="top">
+                <!-- Buttons on the top -->
+                <h2>
+                    <!-- Dropdowns -->
+                    <button>
+                        
+                        <input type="text" placeholder="Search for Assignments">
+                    </button>
+                    
+
+                    <!-- Buttons -->
+                    <button>Group</button>
+                    <button>Assignment</button>
+
+                    <!-- Dropdowns -->
+                    <select>
+                        <option value="edit Assignment Dates">Edit Assignment Dates</option>
+                    </select>
+
+                    <!-- Buttons -->
+                   
+                    
+                </h2>
+
+                <h2>ASSIGNMENTS 40% of Total</h2>
+ 
+                    <ul>
+                        <li><a href="#">A1</a></li>
+                        <li><a href="#">A2</a></li>
+                        <li><a href="#">A3</a></li>
+                        <li><a href="#">A4</a></li>
+                        <li><a href="#">A5</a></li>
+                        <li><a href="#">A6</a></li>
+                    </ul>
+
+                <h2>QUIZZES 10% of Total</h2>
+ 
+                    <ul>
+                        <li><a href="#">Q1</a></li>
+                        <li><a href="#">Q2</a></li>
+                        <li><a href="#">Q3</a></li>
+                        <li><a href="#">Q4</a></li>
+                        <li><a href="#">Q5</a></li>
+                    </ul>
+
+                <h2>EXAMS 20% of Total</h2>
+ 
+                    <ul>
+                        <li><a href="#">Midterm</a></li>
+                        <li><a href="#">Final</a></li>
+                        
+                    </ul>    
+
+                <h2>PROJECT 30% of Total</h2>
+ 
+                    <ul>
+                        <li><a href="#">Project Multiple Modules</a></li>
+                        
+                    </ul>  
+
+
+
+                <div id="assignment-edit">
+
+                    <h2>Edit Assignment</h2>
+                
+                    <!-- Name of the assignment -->
+                    <label for="assignment-name">Name:</label>
+                    <input type="text" id="assignment-name">
+                
+                    <!-- Description -->
+                    <label for="description">Description:</label>
+                    <input type="text" id="description">
+                
+                    <!-- Due, Available from, Until -->
+                    <label for="due-date">Due:</label>
+                    <input type="date" id="due-date">
+                
+                    <label for="available-from">Available from:</label>
+                    <input type="date" id="available-from">
+                
+                    <label for="until-date">Until:</label>
+                    <input type="date" id="until-date">
+                
+                    <!-- Dropdowns -->
+                    <label for="submission-type">Submission Type:</label>
+                    <select id="submission-type">
+                        <option value="option1">Option Shown in Screenshot</option>
+                    </select>
+                
+                    <label for="submission-attempts">Submission Attempts:</label>
+                    <select id="submission-attempts">
+                        <option value="option1">Option Shown in Screenshot</option>
+                    </select>
+                
+                    <label for="plagiarism-review">Plagiarism Review:</label>
+                    <select id="plagiarism-review">
+                        <option value="option1">Option Shown in Screenshot</option>
+                    </select>
+                
+                    <!-- Checkboxes -->
+                    <label for="online-text-entry">Online Text Entry:</label>
+                    <input type="checkbox" id="online-text-entry">
+                
+                    <label for="file-uploads">File Uploads:</label>
+                    <input type="checkbox" id="file-uploads">
+                
+                    <label for="group-assignments">Group Assignments:</label>
+                    <input type="checkbox" id="group-assignments">
+                
+                    <label for="peer-reviews">Peer Reviews:</label>
+                    <input type="checkbox" id="peer-reviews">
+                
+                    <!-- Save and Cancel buttons -->
+                    <button onclick="location.href='index.html'">Cancel</button>
+                    <button onclick="location.href='index.html'">Save</button>
+                
+                </div>
+</body>
+</html>
