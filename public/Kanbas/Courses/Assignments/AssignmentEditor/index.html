@@ -1,0 +1,83 @@
+<div id="assignment-edit">
+
+    <h2>Edit Assignment</h2>
+
+    <!-- Name of the assignment -->
+    <label for="assignmentName">Name:</label>
+    <input 
+        type="text" 
+        id="assignmentName" 
+        placeholder="Assignment Name"
+        /> <br><br>
+
+    <!-- Description -->
+    <h3>
+        <label for="description">Description:</label>
+    </h3>
+    <textarea cols="25" rows="5">
+        
+    </textarea><br><br>
+
+    <h3>Points</h3>
+    <input type="number" max="100" min="50"/><br><br>
+
+    <!-- Dropdowns -->
+    <label for="submission-type">Submission Type:</label>
+    <select id="submission-type">
+        <option value="option1">Option Shown in Screenshot</option>
+    </select><br><br>
+
+    <h3>Online Entry Options</h3>
+    <!-- Checkboxes -->
+    <input type="checkbox" id="text-entry">
+    <label for="text-entry">Text Entry</label><br>
+
+    <input type="checkbox" id="website-url">
+    <label for="website-url">Website URL</label><br>
+
+    <input type="checkbox" id="media-recordings">
+    <label for="media-recordings">Media Recordings</label><br>
+
+    <input type="checkbox" id="student-annotation">
+    <label for="student-annotation">Student Annotation</label><br>
+
+    <input type="checkbox" id="file-uploads">
+    <label for="file-uploads">File Uploads</label><br><br>
+
+     <label for="submission-attempts">Submission Attempts:</label><br>
+    <select id="submission-attempts">
+        <option value="option1">Option Shown in Screenshot</option>
+    </select><br><br>
+
+    <label for="plagiarism-review">Plagiarism Review:</label><br>
+    <select id="plagiarism-review">
+        <option value="option1">Option Shown in Screenshot</option>
+    </select><br><br>
+
+    <label for="group-assignments">Group Assignments:</label>
+    <input type="checkbox" id="group-assignments"><br><br>
+
+    <label for="peer-reviews">Peer Reviews:</label>
+    <input type="checkbox" id="peer-reviews"><br><br>
+
+    
+    <!-- Due, Available from, Until -->
+    <label for="due-date">Due:</label>
+    <input type="date" id="due-date"><br><br>
+
+    <label for="available-from">Available from:</label>
+    <input type="date" id="available-from"> <br><br>
+
+
+    <label for="until-date">Until:</label>
+    <input type="date" id="until-date"><br><br>
+
+    
+
+    
+
+    <!-- Save and Cancel buttons -->
+    <button onclick="location.href='index.html'">Cancel</button>
+    <button onclick="location.href='index.html'">Save</button>
+
+</div>
