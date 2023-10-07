@@ -1,0 +1,50 @@
+.kanbas-sidebar {
+    background-color: black;
+    width: 120px;
+    color: white; /* Default color for text inside the sidebar */
+}
+
+.kanbas-sidebar .nav-link {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+
+.kanbas-sidebar .nav-link:hover {
+    text-decoration: none;
+    color: red; /* Adjust color as desired for hover effect */
+}
+
+.kanbas-sidebar .nav-link.active {
+    background-color: white;
+    color: red; /* Color for active link text */
+}
+
+.nav-link .fas {
+    color: red;
+}
+
+.nav-link .fa-user {
+    color: red;
+}
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+.row.no-gutters > .col {
+    padding-right: 0;
+    padding-left: 0;
+
+}
+
+/* Styles for the Course Navigation sidebar */
+.sidebar .nav-link {
+    color: red;
+}
+
+.sidebar .nav-link.active {
+    color: black; /* Text color for the active link */
+}

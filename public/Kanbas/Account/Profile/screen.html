@@ -1,3 +1,217 @@
+<head>
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="container">
+<div class="row no-gutters"> 
+    <!-- Kanbas Navigation -->
+        <div class="kanbas-sidebar p-3">
+            <h2><img src="logo.png" width="80"></h2>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/Kanbas/Account/Profile/screen.html">
+                        <i class="fas fa-user-circle"></i> Account
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Kanbas/Dashboard/screen.html">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Kanbas/Courses/Home/screen.html">
+                        <i class="fas fa-book-open"></i> Courses
+                    </a>
+                </li>
+            </ul>
+        </div>
+    
+
+    
+        <div class="sidebar p-3">
+            <div class="col-md-3">
+            <h2>Course Navigation</h2>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/Kanbas/Courses/Home/screen.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Kanbas/Courses/Modules/screen.html">
+                        Modules
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Kanbas/Courses/Assignments/screen.html">
+                        Assignments
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Kanbas/Courses/Grades/screen.html">
+                        Grades
+                    </a>
+                </li>               
+            </ul>
+        </div>
+        </div>
+
+
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+
+        <!-- Binita Shakya's Profile -->
+        <div class="col-md-3">
+            <h2>Binita Shakya's Profile</h2>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Name:</th>
+                    <td>Binita Shakya</td>
+                </tr>
+                <tr>
+                    <th>Contact:</th>
+                    <td>shakya.b@northeastern.edu</td>
+                </tr>
+                <tr>
+                    <th>Biography:</th>
+                    <td>Student.</td>
+                </tr>
+                <tr>
+                    <th>Links:</th>
+                    <td>YouTube</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Profile Editing Screen -->
+        <div class="col-md-3">
+            <div id="profile-editing-screen" style="display: none;">
+                <h1>Edit Profile</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" value="John Doe" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact:</label>
+                        <input type="email" id="contact" name="contact" value="johndoe@example.com" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="biography">Biography:</label>
+                        <textarea id="biography" name="biography" class="form-control">John is a software developer from San Francisco.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="links">Links:</label>
+                        <input type="url" id="links" name="links" value="http://johndoe.com" class="form-control">
+                    </div>
+                    <input type="submit" value="Save Profile" class="btn btn-primary">
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('profile-editing-screen').style.display='none';document.getElementById('profile-screen').style.display='block'">Cancel Editing</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sidebar p-3">
+    <h2>Course Navigation</h2>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="/Kanbas/Courses/Home/screen.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Kanbas/Courses/Modules/screen.html">
+                <i class="fas fa-list-ul"></i> Modules
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Kanbas/Courses/Assignments/screen.html">
+                <i class="fas fa-list-ul"></i> Assignments
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Kanbas/Courses/Grades/screen.html">
+                <i class="fas fa-list-ul"></i> Grades
+            </a>
+        </li>
+    </ul>
+</div>
+3. Binita Shakya's Profile:
+This will be slightly different since it contains a table:
+
+html
+Copy code
+<div class="sidebar p-3">
+    <h2>Binita Shakya's Profile</h2>
+    <table class="table table-bordered">
+        <!-- ... your table content ... -->
+    </table>
+</div>
+4. Profile Editing Screen:
+Again, using the same structure:
+
+html
+Copy code
+<div class="sidebar p-3">
+    <h1>Edit Profile</h1>
+    <form>
+        <!-- ... your form content ... -->
+    </form>
+</div>
+CSS:
+You'd apply the same styles that you used for the Kanbas Navigation section:
+
+css
+Copy code
+.sidebar {
+    background-color: black;
+    width: 80px; /* adjust as needed */
+    max-width: 85px;
+}
+
+.nav-link {
+    color: white;
+    background-color: black;
+    text-align: center;
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+
+.nav-link.active {
+    background-color: white;
+    color: red;
+}
+
+.nav-link .fas {
+    color: red;
+}
+
+.nav-link .fa-user {
+    color: white;
+}
+
+
+
+
 <table>
     <tr>
         <td valign="top">

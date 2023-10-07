@@ -1,0 +1,90 @@
+.kanbas-sidebar {
+    background-color: black;
+    width: 120px;
+    color: white; /* Default color for text inside the sidebar */
+}
+
+.kanbas-sidebar .nav-link {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+
+.kanbas-sidebar .nav-link:hover {
+    text-decoration: none;
+    color: red; /* Adjust color as desired for hover effect */
+}
+
+.kanbas-sidebar .nav-link.active {
+    background-color: white;
+    color: red; /* Color for active link text */
+}
+
+.nav-link .fas {
+    color: red;
+}
+
+.nav-link .fa-user {
+    color: red;
+}
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+.row.no-gutters > .col {
+    padding-right: 0;
+    padding-left: 0;
+
+}
+
+/* Styles for the Course Navigation sidebar */
+.sidebar .nav-link {
+    color: red;
+}
+
+.sidebar .nav-link.active {
+    color: black; /* Text color for the active link */
+}
+
+.gray-background {
+    background-color: lightgray;
+    color: black;
+}
+
+.red-background {
+    background-color: red;
+    color: white;
+}
+
+.no-wrap {
+    white-space: nowrap;  /* Prevents text inside from wrapping */
+}
+
+.btn-group {
+    flex-wrap: nowrap;  /* Ensures buttons inside do not wrap onto the next line */
+}
+
+.btn-space {
+    margin-right: 5px;  /* Adds a tiny space on the right side of the button */
+}
+
+.red-font {
+    color: red;
+}
+
+.light-gray-bg {
+    background-color: lightgray;
+}
+
+.no-wrap-item {
+    white-space: nowrap;  /* Prevents the text inside the list item from wrapping */
+    background-color: lightgray;
+    color: black;
+}
+
+.no-wrap-item a {
+    color: black;  /* Makes the link text black */
+}

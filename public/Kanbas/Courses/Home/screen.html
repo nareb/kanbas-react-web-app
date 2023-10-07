@@ -1,107 +1,170 @@
-<table border="1" width="100%">
-    <tr>
-        <td valign="top">
-            <h2>Kanbas Navigation</h2>
-            <ul>
-                <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
-                <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
-                <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
-            </ul>
-        </td>
+<head>
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-        <td valign="top">
-            <h2>Course Navigation</h2>
-            <ul>
-                <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
-                <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
-                <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
-                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-            </ul>
-        </td>
-        <!-- Third Column: Home Screen -->
-        <td valign="top">
-            <!-- Buttons on the top -->
-            <h2>
-            <button onclick="location.href='#'">Collapse All</button>
-            <button onclick="location.href='#'">View Progress</button>
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-            <select>
-                <option value="publish all">Publish All</option>
-            </select> 
-            
-            <button onclick="location.href='#'">Module</button>
-            </h2>
-            
-        <ul>
-            <li>Week 0 - INTRO</li>
-                <ul>
-                    <li>LEARNING OBJECTIVES</li>
-                    <ul>
-                        <li>Introduction to the Course</li>
-                        <li>Learn what is Web Development</li>
-                        <li>Creating a development environment</li>
-                        <li>Creating a Web Application</li>
-                        <li>Getting started with a 1st Assignment</li>
-                    </ul>
-                    <li>READING</li>
-                    <ul>
-                        <li>Full Stack Developer - Chapter 1 - Introduction</li>
-                        <li>Full Stack Developmer - Chapter 2 - Creating User Interfaces with HTML</li>
-                    </ul>
-                    <li>SLIDES</li>
-                    <ul>
-                        <li><a href="#">Introduction to Web Development Links to an external site</a></li>
-                        <li><a href="#">Creating an HTTP Server with Node.js Links to an external site</a></li>
-                        <li><a href="#">Creating a React Application Links to an external site</a></li>
-                    </ul>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<div class="container">
+    <div class="row no-gutters"> 
+        
+        <div class="col-md-auto">
+            <!-- Kanbas Navigation -->
+            <div class="kanbas-sidebar p-3">
+                <h2><img src="logo.png" width="80"></h2>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Account/Profile/screen.html">
+                            <i class="fas fa-user-circle"></i> Account
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Dashboard/screen.html">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                    </li>
+    
+    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Kanbas/Courses/Home/screen.html">
+                            <i class="fas fa-book-open"></i> Courses
+                        </a>
+                    </li>
                 </ul>
-            <li>Week 1 - HTML</li>
-                <ul>
-                    <li>LEARNING OBJECTIVES</li>
+            </div>
+        </div>
+        
+    
+        
+        <div class="col-md-auto">
+            <div class="sidebar pr-3">
+                <h6>CS5610</h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Kanbas/Courses/Home/screen.html">
+                            Home
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Courses/Modules/screen.html">
+                            Modules
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Courses/Assignments/screen.html">
+                            Assignments
+                        </a>
+                    </li>
+    
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Courses/Grades/screen.html">
+                            Grades
+                        </a>
+                    </li>               
+                </ul>
+            </div>
+        </div>
+
+            <!-- Third Column: Home Screen -->
+    
+                <div class="col-md-5 pl-3">
+                <h2>
+                    <div class="btn-group mb-2" role="group">
+                        <button class="btn gray-background no-wrap btn-space" onclick="location.href='#'">Collapse All</button>
+                        <button class="btn gray-background no-wrap btn-space" onclick="location.href='#'">View Progress</button>
+                        <select class="custom-select gray-background btn-space">
+                            <option value="publish all">Publish All</option>
+                        </select> 
+                        <button class="btn red-background btn-space" onclick="location.href='#'">Module</button>
+                    </div>
+                </h2>
+
+                <ul class="list-group">
+                    <li class="list-group-item">Week 0 - INTRO</li>
+
                     <ul>
-                        <li>Learn how to create user interfaces with HTML</li>
-                        <li>Keep working on assignment 1</li>
-                        <li>Deploy the assignment to Netlify</li>
+                        <li>LEARNING OBJECTIVES</li>
+
+                        <ul>
+                            <li>Introduction to the Course</li>
+                            <li>Learn what is Web Development</li>
+                            <li>Creating a development environment</li>
+                            <li>Creating a Web Application</li>
+                            <li>Getting started with a 1st Assignment</li>
+                        </ul>
+
+                        <li>READING</li>
+
+                        <ul>
+                            <li>Full Stack Developer - Chapter 1 - Introduction</li>
+                            <li>Full Stack Developmer - Chapter 2 - Creating User Interfaces with HTML</li>
+                        </ul>
+
+                        <li>SLIDES</li>
+
+                        <ul>
+                            <li class="red-font"><a href="#" class="red-font">Introduction to Web Development Links to an external site</a></li>
+                            <li class="red-font"><a href="#" class="red-font">Creating an HTTP Server with Node.js Links to an external site</a></li>
+                            <li class="red-font"><a href="#" class="red-font">Creating a React Application Links to an external site</a></li>
+                        </ul>
+
                     </ul>
-                    <li>READING</li>
-                    <ul>
-                        <li>Full Stack Developer - Chapter 1 - Introduction</li>
-                        <li>Full Stack Developmer - Chapter 2 - Creating User Interfaces with HTML</li>
-                    </ul>
+                        <li class="list-group-item">Week 1 - HTML</li>
+                            <ul>
+                                <li>LEARNING OBJECTIVES</li>
+                                <ul>
+                                    <li>Learn how to create user interfaces with HTML</li>
+                                    <li>Keep working on assignment 1</li>
+                                    <li>Deploy the assignment to Netlify</li>
+                                </ul>
+
+                                <li>READING</li>
+                                <ul>
+                                    <li>Full Stack Developer - Chapter 1 - Introduction</li>
+                                    <li>Full Stack Developmer - Chapter 2 - Creating User Interfaces with HTML</li>
+                                </ul>                               
+                            </ul>                    
+                </ul>
+                </div>
+            
+
+            <!-- Fourth Column: Additional Information -->
+            <div class="col-md-3 p-3">
+                <h6>Course Status</h6>
+                <div class="btn-group mb-2" role="group">
+                    <button class="btn btn-secondary" onclick="location.href='#'">Unpublish</button>
+                    <button class="btn btn-success" onclick="location.href='#'">Published</button>
+                </div>
+                
+                <ul class="list-group light-gray-bg">
+                    <li class="list-group-item no-wrap-item"><a href="#">Import Existing Content</a></li>
+                    <li class="list-group-item no-wrap-item"><a href="#">Import From Commons</a></li>
+                    <li class="list-group-item no-wrap-item"><a href="#">Choose Home Page</a></li>
+                    <li class="list-group-item no-wrap-item"><a href="#">View Course Stream</a></li>
+                    <li class="list-group-item no-wrap-item"><a href="#">New Announcement</a></li>
+                    <li class="list-group-item no-wrap-item"><a href="#">New Analytics</a></li>
+                    <li class="list-group-item no-wrap-item"><a href="#">View Course Notifications</a></li>
                     
                 </ul>
-        </ul>
-        </td>
 
-
-        <!-- Fourth Column: Additional Information -->
-        <td valign="top">
-            <h2>Course Status</h2>
-            <!-- Buttons on the top -->
-                <button onclick="location.href='#'">Unpublished</button>
-                <button onclick="location.href='#'">Published</button>
-
-                <ul>
-                    <li><a href="#">Import Existing Content</a></li>
-                    <li><a href="#">Import From Commons</a></li>
-                    <li><a href="#">Choose Home Page</a></li>
-                    <li><a href="#">View Course Stream</a></li>
-                    <li><a href="#">New Announcement</a></li>
-                    <li><a href="#">New Analytics</a></li>
-                    <li><a href="#">View Course Notifications</a></li>
-                </ul>
-
-            <h2>Comming Up</h2>
-            <!-- Buttons on the top -->
-            <p>
-                <a href='#'">View Calendar</a>
-            </p>
-                <ul>
-                    <li><a href="#">Lecture CS4550.12631.202410 Sep 7 at 11:45am</a></li>
-                    <li><a href="#">Lecture CS4550.12631.202410 Sep 11 at 11:45am</a></li>
-                    <li><a href="#">CS5610 06 SP23 Lecture Sep 11 at 6pm</a></li>
-                </ul>
-
-        </td>
-    </tr>
-</table>
+                <h2 class="mt-4">Coming Up</h2>
+                <a href='#' class="btn btn-link">View Calendar</a>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">Lecture CS4550.12631.202410 Sep 7 at 11:45am</a></li>
+                    <li class="list-group-item"><a href="#">Lecture CS4550.12631.202410 Sep 11 at 11:45am</a></li>
+                    <li class="list-group-item"><a href="#">CS5610 06 SP23 Lecture Sep 11 at 6pm</a></li>
+                    
+                </ul
+            </div>
+                
+    
+    </div>
+</div>
