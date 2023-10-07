@@ -62,6 +62,68 @@
     font-size: 12px;  /* Adjust as needed */
 }
 
+.nav-link .fas {
+    color: red;
+}
+
+.nav-link .fa-user {
+    color: red;
+}
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+.row.no-gutters > .col {
+    padding-right: 0;
+    padding-left: 0;
+
+}
+
+/* Styles for the Course Navigation sidebar */
+.sidebar .nav-link {
+    color: red;
+}
+
+.sidebar .nav-link.active {
+    color: black; /* Text color for the active link */
+}
+
+.kanbas-sidebar .fas {
+    margin-bottom: 5px;  /* Space below the icon */
+}
+
+.kanbas-sidebar .nav-link span {
+    font-size: 12px;  /* Adjust as needed */
+}
+
+
+.nav-link .fas {
+    color: red;
+}
+
+.nav-link .fa-user {
+    color: red;
+}
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+.row.no-gutters > .col {
+    padding-right: 0;
+    padding-left: 0;
+
+}
+
+/* Styles for the Course Navigation sidebar */
+.sidebar .nav-link {
+    color: red;
+}
+
+.sidebar .nav-link.active {
+    color: black; /* Text color for the active link */
+}
 
 .gray-background {
     background-color: lightgray;

@@ -15,49 +15,120 @@
 
 <div class="container">
     <div class="row no-gutters"> 
-        
-        <div class="col-md-auto">
-            <!-- Kanbas Navigation -->
-            <div class="kanbas-sidebar p-3">
-                <h2><img src="logo.png" width="80"></h2>
-                <ul class="nav flex-column">
+
+        <!-- First Column: Kanbas Navigation -->
+        <div class="col-md-auto">      
+            <div class="kanbas-sidebar">
+
+                <h2><img src="logo.png" width="80" alt="Logo"></h2>
+                <ul class="nav flex-column ">
                     <li class="nav-item">
                         <a class="nav-link" href="/Kanbas/Account/Profile/screen.html">
-                            <i class="fas fa-user-circle"></i> Account
+                            <i class="fas fa-user-circle"></i>
+                            <span>Account</span>
                         </a>
                     </li>
-    
+
                     <li class="nav-item">
                         <a class="nav-link" href="/Kanbas/Dashboard/screen.html">
-                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                            <i class="fas fa-tachometer-alt"></i> 
+                            <span>Dashboard</span>
                         </a>
                     </li>
     
     
                     <li class="nav-item">
                         <a class="nav-link active" href="/Kanbas/Courses/Home/screen.html">
-                            <i class="fas fa-book-open"></i> Courses
+                            <i class="fas fa-book-open"></i> 
+                            <span>Courses</span>
                         </a>
                     </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Calendar/screen.html">
+                            <i class="fas fa-calendar-alt"></i> 
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Inbox/screen.html">
+                            <i class="fas fa-envelope"></i> 
+                            <span>Inbox</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/History/screen.html">
+                            <i class="fas fa-history"></i> 
+                            <span>History</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Studio/screen.html">
+                            <i class="fas fa-paint-brush"></i> 
+                            <span>Studio</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Commons/screen.html">
+                            <i class="fas fa-users"></i> 
+                            <span>Commons</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Help/screen.html">
+                            <i class="fas fa-question-circle"></i> 
+                            <span>Help</span>
+                        </a>
+                    </li>
+
                 </ul>
             </div>
         </div>
-        
-    
-        
-        <div class="col-md-auto">
+
+        <!-- Second Column (Secondary Sidebar + Breadcrumb) -->
+        <div class="col-md-2"> 
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">CS5610</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Grades</li>
+                </ol>
+            </nav>
+
             <div class="sidebar pr-3">
-                <h6>CS5610</h6>
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="/Kanbas/Courses/Home/screen.html">
                             Home
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Courses/Piazza/screen.html">
+                            Piazza
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Courses/ZoomMeetings/screen.html">
+                            Zoom Meetings
+                        </a>
+                    </li>
     
                     <li class="nav-item">
                         <a class="nav-link" href="/Kanbas/Courses/Modules/screen.html">
                             Modules
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Courses/Quizzes/screen.html">
+                            Quizzes
                         </a>
                     </li>
     
@@ -72,7 +143,21 @@
                         <a class="nav-link active" href="/Kanbas/Courses/Grades/screen.html">
                             Grades
                         </a>
-                    </li>               
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Courses/Peoples/screen.html">
+                            Peoples
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Kanbas/Courses/MicrosoftTeamsMeetings/screen.html">
+                            Microsoft Teams Meetings
+                        </a>
+                    </li>
+
+
                 </ul>
             </div>
         </div>
@@ -96,8 +181,10 @@
             </div>
 
 
+            <!-- Search for students and assignments -->
+
             <div class="container mt-4">
-                <table class="table table-bordered">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Student Names</th>
@@ -108,7 +195,7 @@
                         <tr>
                             <td>
                                 <input 
-                                    class="form-control"
+                                    class="form-control search-input"
                                     type="text" 
                                     title="Type the name of the student to search for"
                                     placeholder="Search Students"
@@ -116,7 +203,7 @@
                             </td>
                             <td>
                                 <input 
-                                    class="form-control"
+                                    class="form-control search-input"
                                     type="text" 
                                     title="Type the name of the assignment to search for"
                                     placeholder="Search Assignments"
@@ -308,13 +395,9 @@
                             <td>84</td>
                             <td>92</td>
                         </tr>
-
                     </tbody>
                 </table>
-
             </div>
-            
-
         </div>
     </div>
 </div>

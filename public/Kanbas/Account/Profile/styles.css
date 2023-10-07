@@ -1,15 +1,20 @@
 .kanbas-sidebar {
     background-color: black;
-    width: 120px;
+    width: 80px; /* As it's between 75 and 85px */
     color: white; /* Default color for text inside the sidebar */
+    text-align: center;
 }
 
 .kanbas-sidebar .nav-link {
     background-color: black;
     color: white;
+    margin: 7px 0;  /* Margin between 5 and 10px */
+    padding: 7px;  /* Padding between 5 and 10px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin: 5px 0;
-    padding: 5px 10px;
+    flex-direction: column;  /* Stack items vertically */
 }
 
 .kanbas-sidebar .nav-link:hover {
@@ -48,3 +53,12 @@
 .sidebar .nav-link.active {
     color: black; /* Text color for the active link */
 }
+
+.kanbas-sidebar .fas {
+    margin-bottom: 5px;  /* Space below the icon */
+}
+
+.kanbas-sidebar .nav-link span {
+    font-size: 12px;  /* Adjust as needed */
+}
+
