@@ -1,3 +1,4 @@
+import React from "react";
 import db from "../../Database";
 import { useParams } from "react-router-dom";
 function Grades() {
