@@ -129,7 +129,6 @@
     "assignment": "3",
     "grade": "82"
   },
-
   {
     "_id": "10",
     "student": "124",
@@ -148,14 +147,12 @@
     "assignment": "6",
     "grade": "80"
   },
-
   {
     "_id": "1",
     "student": "125",
     "assignment": "1",
     "grade": "90"
   },
-  
   {
     "_id": "2",
     "student": "125",
@@ -174,14 +171,12 @@
     "assignment": "4",
     "grade": "92"
   },
-
   {
     "_id": "5",
     "student": "125",
     "assignment": "5",
     "grade": "91"
   },
-
   {
     "_id": "6",
     "student": "125",
