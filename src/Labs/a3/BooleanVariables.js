@@ -9,7 +9,7 @@ let true3 = !false2
 let true4 = numberVariable === 123
 let true5 = floatingPointNumber !== 321.432
 let false3 = numberVariable < 100
-let sortaTrue = '1' == 1 
+let sortaTrue = '1' === 1 
 let notTrue = '1' === 1 
 return (
     <>

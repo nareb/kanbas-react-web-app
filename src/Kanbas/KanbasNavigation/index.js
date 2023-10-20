@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { BiUserCircle } from "react-icons/bi";
-import { FaInbox, FaMailBulk } from 'react-icons/fa';
+import { FaInbox } from 'react-icons/fa';
 import { BiGroup, BiHistory, BiHelpCircle, BiFilm } from "react-icons/bi";
 import { RiDashboard3Fill } from "react-icons/ri";
 import { FaBook } from "react-icons/fa";
