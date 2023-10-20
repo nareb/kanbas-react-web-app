@@ -1,0 +1,23 @@
+[
+    {
+      "_id": "CS5610",
+      "name": "Web Development",
+      "number": "CS5610.17367.202410",
+      "startDate": "2023-01-10",
+      "endDate": "2023-05-15"
+    },
+    {
+      "_id": "CS5200",
+      "name": "Database Management System",
+      "number": "CS5200.MERGED.202230",
+      "startDate": "2023-01-10",
+      "endDate": "2023-05-15"
+    },
+    {
+      "_id": "CS5800",
+      "name": "Algorithms",
+      "number": "CS5800.MERGED.202310",
+      "startDate": "2023-01-10",
+      "endDate": "2023-05-15"
+    }
+  ]
