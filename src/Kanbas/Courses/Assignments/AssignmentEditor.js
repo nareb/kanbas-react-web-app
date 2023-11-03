@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addAssignment, updateAssignment, selectAssignment } from "./assignmentsReducer";
+import { addAssignment, updateAssignment } from "./assignmentsReducer";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
 
 function AssignmentEditor() {
-  const { assignmentId } = useParams();
+  
   const { courseId } = useParams();
   const navigate = useNavigate();
 
@@ -35,10 +35,13 @@ function AssignmentEditor() {
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
 
+  /* eslint-disable no-unused-vars */
+
   const cancel = () => {
     // Reset form or navigate back to Assignments screen
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
+  /* eslint-enable no-unused-vars */
 
   return (
     <div>
