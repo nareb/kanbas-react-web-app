@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useState } from "react";
 //import JsonPre from "../../Labs/a3/JsonPre";
 import db from "../Database";
 import CourseNavigation from "./CourseNavigation";
@@ -13,14 +14,14 @@ import Piazza from "./Piazza";
 import Quizzes from "./Quizzes";
 import ZoomMeetings from "./ZoomMeetings";
 
-function Courses() {
+function Courses({courses}) {
   const { courseId } = useParams();
-  const {pathname} = useLocation();
-  const [, , , , screen] = pathname.split("/");
-  const course = db.courses.find((course) => course._id === courseId);
+
+  const course = courses.find((course) => course._id === courseId);
+
   return (
     <div>
-      <h1>Courses {course.name} / {screen}</h1>
+      <h1>{course.name}</h1>
       <CourseNavigation />
       <div>
         <div

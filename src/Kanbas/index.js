@@ -1,11 +1,54 @@
 import React from "react";
+import { useState } from "react";
 import { Route, Routes, Navigate } from "react-router";
 import KanbasNavigation from "./KanbasNavigation";
 import Courses from "./Courses";
 import Account from "./Account";
 import Dashboard from "./Dashboard";
+import db from "./Database";
+import { Link } from "react-router-dom";
 
 function Kanbas() {
+  const [courses, setCourses] = useState(db.courses);
+  const [newCourseName, setNewCourseName] = useState("");
+  const [newCourseNumber, setNewCourseNumber] = useState("");
+  const [editingCourseId, setEditingCourseId] = useState(null);
+  const [selectedCourse, setSelectedCourse] = useState({
+    name: "New Course",
+    number: "New Number",
+    startDate: "2023-09-10",
+    endDate: "2023-12-15",
+  });
+
+  const handleCreateCourse = () => {
+    if (newCourseName) {
+      const newCourse = {
+        _id: new Date().getTime(),
+        name: newCourseName,
+        number: newCourseNumber,
+      };
+      setCourses([...courses, newCourse]);
+      setNewCourseName("");
+      setNewCourseNumber("");
+    }
+  };
+
+  const handleUpdateCourse = (id, newName, newNumber) => {
+    const updatedCourses = courses.map((course) => {
+      if (course._id === id) {
+        return { ...course, name: newName, number: newNumber };
+      }
+      return course;
+    });
+    setCourses(updatedCourses);
+    setEditingCourseId(null);
+  };
+
+  const handleDeleteCourse = (id) => {
+    const updatedCourses = courses.filter((course) => course._id !== id);
+    setCourses(updatedCourses);
+  };
+
   return (
     <div className="d-flex">
       <KanbasNavigation />
@@ -13,8 +56,29 @@ function Kanbas() {
         <Routes>
           <Route path="/" element={<Navigate to="Dashboard" />} />
           <Route path="Account" element={<Account />} />
-          <Route path="Dashboard" element={<Dashboard />} />
-          <Route path="Courses/:courseId/*" element={<Courses />} />
+          <Route
+            path="Dashboard"
+            element={
+              <Dashboard
+                courses={courses}
+                newCourseName={newCourseName}
+                newCourseNumber={newCourseNumber}
+                editingCourseId={editingCourseId}
+                selectedCourse={selectedCourse}
+                setNewCourseName={setNewCourseName}
+                setNewCourseNumber={setNewCourseNumber}
+                setEditingCourseId={setEditingCourseId}
+                setSelectedCourse={setSelectedCourse}
+                handleCreateCourse={handleCreateCourse}
+                handleUpdateCourse={handleUpdateCourse}
+                handleDeleteCourse={handleDeleteCourse}
+              />
+            }
+          />
+          <Route
+            path="Courses/:courseId/*"
+            element={<Courses courses={courses} />} // Pass courses as a prop
+          />
           <Route path="Group" element={<h1>Group</h1>} />
           <Route path="Calendar" element={<h1>Calendar</h1>} />
           <Route path="Inbox" element={<h1>Inbox</h1>} />
