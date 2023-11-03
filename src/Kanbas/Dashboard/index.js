@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react";
-import db from "../Database";
+
 import { Link } from "react-router-dom";
 
 function Dashboard(
