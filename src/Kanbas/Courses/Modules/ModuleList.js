@@ -1,8 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { addModule, deleteModule, updateModule, setModule } from "./modulesReducer";
+
 import db from "../../Database";
 
 function ModuleList() {

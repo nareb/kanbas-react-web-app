@@ -6,7 +6,7 @@ import Courses from "./Courses";
 import Account from "./Account";
 import Dashboard from "./Dashboard";
 import db from "./Database";
-import { Link } from "react-router-dom";
+
 
 function Kanbas() {
   const [courses, setCourses] = useState(db.courses);
