@@ -1,12 +1,43 @@
-import React from "react";
-
+import { useSelector, useDispatch } from "react-redux";
+import { Dispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-
-import db from "../../Database";
+import {
+  addModule, deleteModule, updateModule, setModule,
+setModules,
+} from "./modulesReducer";
+import * as client from "./client";
+import { findModulesForCourse, createModule } from "./client";
 
 function ModuleList() {
+  const dispatch = useDispatch();
   const { courseId } = useParams();
+
+  useEffect(() => {
+    findModulesForCourse(courseId)
+    .then((modules) =>
+    dispatch(setModules(modules))
+    );
+  }, [courseId, dispatch]);
+
+  const handleAddModule = () => {
+    createModule(courseId, newModule).then((module) => {
+    dispatch(addModule(module));
+    });
+  };
+
+  const handleDeleteModule = (moduleId) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+  
+
   const [modules, setModules] = useState([]);
   const [newModule, setNewModule] = useState({ name: "", title: "" });
   const [selectedModule, setSelectedModule] = useState(null);
@@ -47,12 +78,6 @@ function ModuleList() {
       setSelectedModule(null);
     }
   };
-
-  useEffect(() => {
-    // Load modules from your API or database.
-    setModules(db.modules);
-  }, []);
-
   return (
     <div>
       <ul className="list-group">
@@ -60,8 +85,18 @@ function ModuleList() {
           .filter((module) => module.course === courseId)
           .map((module, index) => (
             <li key={module._id} className="list-group-item">
+              
               <h3>{module.name}</h3>
               <h4>{module.title}</h4>
+              <button
+                onClick={handleAddModule}>
+                Add
+              </button>
+              <button
+              onClick={() => handleDeleteModule(module._id)}
+              >
+              Delete
+              </button>
               <button onClick={() => deleteSelectedModule(module._id)}>
                 Delete
               </button>

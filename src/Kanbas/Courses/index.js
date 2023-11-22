@@ -1,4 +1,6 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { useParams, Routes, Route, Navigate } from "react-router-dom";
 
 //import JsonPre from "../../Labs/a3/JsonPre";
@@ -14,10 +16,20 @@ import Piazza from "./Piazza";
 import Quizzes from "./Quizzes";
 import ZoomMeetings from "./ZoomMeetings";
 
-function Courses({courses}) {
+function Courses({}) {
   const { courseId } = useParams();
+  const URL = "http://localhost:4000/api/courses";
 
-  const course = courses.find((course) => course._id === courseId);
+  const [course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+  const response = await axios.get(
+  `${URL}/${courseId}`
+  );
+    setCourse(response.data);
+  };
+  useEffect(() => {
+  findCourseById(courseId);
+  }, [courseId]);
 
   return (
     <div>
