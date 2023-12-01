@@ -7,7 +7,9 @@ import Assignment4 from "./Labs/a4";
 import Assignment5 from "./Labs/a5";
 
 import {HashRouter} from "react-router-dom";
+//import { HashRouter, Link, Navigate, Route, Routes } from "react-router-dom";
 import {Routes, Route, Navigate} from "react-router";
+import Project from "./project";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path="/Labs/*" element={<Labs/>}/>
           <Route path="/hello" element={<HelloWorld/>}/> 
           <Route path="/Kanbas/*" element={<Kanbas/>}/>
+          <Route path="/project/*" element={<Project />} />
           <Route path="/Labs/a4" element={<Assignment4 />} />
           <Route path="/Labs/a5" element={<Assignment5 />} />
         </Routes>
