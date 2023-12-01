@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useCallback } from "react";
 import { useParams } from "react-router-dom";
 import * as client from "./client";
 
@@ -13,10 +14,10 @@ function ModuleList() {
     setModules([newModule, ...modules]);
   };
 
-  const fetchModules = async () => {
+  const fetchModules = useCallback(async () => {
     const modules = await client.findModulesForCourse(courseId);
     setModules(modules);
-  };
+  }, [courseId]);
   
 
   useEffect(() => {
