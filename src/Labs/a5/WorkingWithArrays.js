@@ -13,12 +13,13 @@ function WorkingWithArrays() {
 
   const TODOS_API = "http://localhost:4000/a5/todos";
 
-  const fetchTodosPromise = () => {
+  /*const fetchTodosPromise = () => {
     const promise = axios.get(TODOS_API);
     promise.then((response) => {
       setTodos(response.data);
     });
   };
+  */
 
   const createTodo = async () => {
     const response = await axios.get("http://localhost:4000/a5/todos/create");
@@ -37,10 +38,11 @@ function WorkingWithArrays() {
     setTodos(response.data);
   };
 
-  const removeTodo = async (id) => {
+  /*const removeTodo = async (id) => {
     const response = await axios.get(`${TODOS_API}/${id}/delete`);
     setTodos(response.data);
   };
+  */
 
   const deleteTodo = async (id) => {
     const response = await axios.delete(`${TODOS_API}/${id}`);
