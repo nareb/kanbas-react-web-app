@@ -26,7 +26,11 @@ function ModuleList() {
     };
 
     fetchData();
+  }, []);
+
+    /*fetchData();
   }, [fetchModules]); // Include fetchModules in the dependency array
+  */
 
   useEffect(() => {
     fetchModules();
