@@ -1,39 +1,40 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { useParams, Routes, Route, Navigate } from "react-router-dom";
-
-//import JsonPre from "../../Labs/a3/JsonPre";
-
+import React, { useState, useEffect } from "react";
+import {
+  useParams,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+import JsonPre from "../../Labs/a3/JsonPre";
+import db from "../Database";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
-import People from "./People";
-import Piazza from "./Piazza";
-import Quizzes from "./Quizzes";
-import ZoomMeetings from "./ZoomMeetings";
+import * as client from "./client";
 
-function Courses({}) {
+function Courses() {
   const { courseId } = useParams();
-  const URL = "http://localhost:4000/api/courses";
-
-  const [course, setCourse] = useState({});
-  const findCourseById = async (courseId) => {
-  const response = await axios.get(
-  `${URL}/${courseId}`
-  );
-    setCourse(response.data);
+  const { pathname } = useLocation();
+  const [empty, kanbas, courses, id, screen] = pathname.split("/");
+  const [course, setCourse] = useState({}); // = db.courses.find((course) => course._id === courseId);
+  const fetchCourse = async () => {
+    const course = await client.fetchCourse(courseId);
+    setCourse(course);
   };
+
   useEffect(() => {
-  findCourseById(courseId);
-  }, [courseId]);
+    fetchCourse();
+  }, []);
 
   return (
     <div>
-      <h1>{course.name}</h1>
+      <h1>
+        Courses {course.name} / {screen}
+      </h1>
       <CourseNavigation />
       <div>
         <div
@@ -45,22 +46,17 @@ function Courses({}) {
         >
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
-            <Route path="Home" element={<Home/>} />
-            <Route path="Modules" element={<Modules/>} />
-            <Route path="Piazza" element={<Piazza/>} />
-            <Route path="ZoomMeetings" element={<ZoomMeetings/>} />
-            <Route path="Assignments" element={<Assignments/>} />
+            <Route path="Home" element={<Home />} />
+            <Route path="Modules" element={<Modules />} />
+            <Route path="Assignments" element={<Assignments />} />
             <Route
               path="Assignments/:assignmentId"
-              element={<AssignmentEditor/>}
+              element={<AssignmentEditor />}
             />
-            <Route path="Quizzes" element={<Quizzes/>} />
-            <Route path="Grades" element={<Grades/>} />
-            <Route path="People" element={<People/>} />
+            <Route path="Grades" element={<Grades />} />
           </Routes>
         </div>
       </div>
-
     </div>
   );
 }
