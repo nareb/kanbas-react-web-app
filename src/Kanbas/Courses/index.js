@@ -35,9 +35,7 @@ function Courses() {
 
   return (
     <div>
-      <h1>
-        Courses {course.name} / {screen}
-      </h1>
+      
       <CourseNavigation />
       <div>
         <div
