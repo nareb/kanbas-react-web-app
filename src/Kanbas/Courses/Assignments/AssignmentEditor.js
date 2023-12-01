@@ -1,96 +1,38 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addAssignment, updateAssignment } from "./assignmentsReducer";
+import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-
+import db from "../../Database";
 
 function AssignmentEditor() {
-  
+  const { assignmentId } = useParams();
+  const assignment = db.assignments.find(
+    (assignment) => assignment._id === assignmentId);
+
   const { courseId } = useParams();
   const navigate = useNavigate();
-
-  const selectedAssignment = useSelector((state) => state.assignments.selectedAssignment);
-  const dispatch = useDispatch();
-  
-
-  const initialAssignment = {
-    name: "",
-    description: "",
-    dueDate: new Date(),
-    availableFromDate: new Date(),
-    availableUntilDate: new Date(),
-  };
-
-  const [assignment, setAssignment] = useState(selectedAssignment || initialAssignment);
-
-  const saveAssignment = () => {
-    if (selectedAssignment) {
-      // Update the assignment
-      dispatch(updateAssignment(assignment));
-    } else {
-      // Add a new assignment
-      dispatch(addAssignment(assignment));
-    }
-    // Reset form or navigate back to Assignments screen
+  const handleSave = () => {
+    console.log("Actually saving assignment TBD in later assignments");
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
-
-  /* eslint-disable no-unused-vars */
-
-  const cancel = () => {
-    // Reset form or navigate back to Assignments screen
-    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-  };
-  /* eslint-enable no-unused-vars */
-
   return (
     <div>
       <h2>Assignment Name</h2>
-      <input
-        value={assignment.name}
-        className="form-control mb-2"
-        onChange={(e) => setAssignment({ ...assignment, name: e.target.value })}
-      />
-
-      <h2>Assignment Description</h2>
-      <textarea
-        value={assignment.description}
-        className="form-control mb-2"
-        onChange={(e) => setAssignment({ ...assignment, description: e.target.value })}
-      />
-
-      <h2>Due Date</h2>
-      <input
-        type="date"
-        value={assignment.dueDate}
-        className="form-control mb-2"
-        onChange={(e) => setAssignment({ ...assignment, dueDate: e.target.value })}
-      />
-
-      <h2>Available From Date</h2>
-      <input
-        type="date"
-        value={assignment.availableFromDate}
-        className="form-control mb-2"
-        onChange={(e) => setAssignment({ ...assignment, availableFromDate: e.target.value })}
-      />
-
-      <h2>Available Until Date</h2>
-      <input
-        type="date"
-        value={assignment.availableUntilDate}
-        className="form-control mb-2"
-        onChange={(e) => setAssignment({ ...assignment, availableUntilDate: e.target.value })}
-      />
-
-      <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-danger">
+      <input value={assignment.title}
+             className="form-control mb-2" />
+      <Link to={`/Kanbas/Courses/${courseId}/Assignments`}
+            className="btn btn-danger">
         Cancel
       </Link>
-      <button onClick={saveAssignment} className="btn btn-success me-2">
+      {/* <Link onClick={handleSave}
+            to={`/Kanbas/Courses/${courseId}/Assignments`}
+            className="btn btn-success me-2">
+        Save
+      </Link> */}
+      <button onClick={handleSave} className="btn btn-success me-2">
         Save
       </button>
     </div>
   );
 }
+
 
 export default AssignmentEditor;
