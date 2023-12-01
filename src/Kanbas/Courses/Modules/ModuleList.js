@@ -26,7 +26,7 @@ function ModuleList() {
     };
 
     fetchData();
-  }, []);
+  }, [fetchModules]);
 
     /*fetchData();
   }, [fetchModules]); // Include fetchModules in the dependency array
@@ -34,7 +34,7 @@ function ModuleList() {
 
   useEffect(() => {
     fetchModules();
-  }, []);
+  }, [fetchModules]);
   
 
   return (
