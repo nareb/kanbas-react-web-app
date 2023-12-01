@@ -19,8 +19,17 @@ function ModuleList() {
   };
 
   useEffect(() => {
+    const fetchData = async () => {
+      await fetchModules();
+    };
+
+    fetchData();
+  }, [fetchModules]); // Include fetchModules in the dependency array
+
+  /*useEffect(() => {
     fetchModules();
   }, []);
+  */
 
   return (
     <ul className="list-group">

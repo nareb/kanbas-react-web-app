@@ -5,7 +5,7 @@ import KanbasNavigation from "./KanbasNavigation";
 import Courses from "./Courses";
 import Account from "./Account";
 import Dashboard from "./Dashboard";
-import db from "./Database";
+//import db from "./Database";
 
 
 function Kanbas() {
