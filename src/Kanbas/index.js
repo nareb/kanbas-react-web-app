@@ -63,6 +63,7 @@ return c; })
     endDate: "2023-12-15",
   });
 
+
   const handleCreateCourse = () => {
     if (newCourseName) {
       const newCourse = {

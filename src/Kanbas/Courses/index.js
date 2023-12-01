@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 //import JsonPre from "../../Labs/a3/JsonPre";
-import db from "../Database";
+//import db from "../Database";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";
 import Home from "./Home";
@@ -23,7 +23,7 @@ function Courses() {
   const [course, setCourse] = useState({}); // = db.courses.find((course) => course._id === courseId);
   const fetchCourse = async () => {
     const course = await client.fetchCourse(courseId);
-    setCourse(course);
+    //setCourse(course);
   };
 
   useEffect(() => {
