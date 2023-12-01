@@ -17,6 +17,7 @@ function ModuleList() {
     const modules = await client.findModulesForCourse(courseId);
     setModules(modules);
   };
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,10 +27,10 @@ function ModuleList() {
     fetchData();
   }, [fetchModules]); // Include fetchModules in the dependency array
 
-  /*useEffect(() => {
+  useEffect(() => {
     fetchModules();
   }, []);
-  */
+  
 
   return (
     <ul className="list-group">
