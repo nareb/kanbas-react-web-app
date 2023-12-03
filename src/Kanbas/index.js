@@ -10,7 +10,8 @@ import Dashboard from "./Dashboard";
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
-  const URL = "http://localhost:4000/api/courses";
+  //const URL = "http://localhost:4000/api/courses";
+  const URL = "https://kanbas-node-server-app-fa23-93c731197fdb.herokuapp.com/api/courses"
 
   const findAllCourses = async () => {
   const response = await axios.get(URL);
