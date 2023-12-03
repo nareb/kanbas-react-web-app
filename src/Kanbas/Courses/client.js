@@ -1,4 +1,5 @@
 import axios from "axios";
+const URL = "https://kanbas-node-server-app-fa23-93c731197fdb.herokuapp.com/api/courses"
 
 export const fetchCourses = async () => {
   // const promise = axios.get("http://localhost:4000/api/courses");
@@ -6,25 +7,25 @@ export const fetchCourses = async () => {
   //   setCourses(response.data);
   // });
 
-  const response = await axios.get("http://localhost:4000/api/courses");
+  const response = await axios.get(URL);
   return response.data;
 };
 
 export const fetchCourse = async (id) => {
-  const response = await axios.get(`http://localhost:4000/api/courses/${id}`);
+  const response = await axios.get(`${URL}/${id}`);
   return response.data;
 };
 
 export const deleteCourse = async (id) => {
   const response = await axios.delete(
-    `http://localhost:4000/api/courses/${id}`
+    `${URL}/${id}`
   );
   return response.data;
 };
 
 export const updateCourse = async (course) => {
   const response = await axios.put(
-    `http://localhost:4000/api/courses/${course._id}`,
+    `${URL}/${course._id}`,
     course
   );
   return response.data;
@@ -32,7 +33,7 @@ export const updateCourse = async (course) => {
 
 export const addCourse = async (course) => {
   const response = await axios.post(
-    "http://localhost:4000/api/courses",
+    URL,
     course
   );
   return response.data;
