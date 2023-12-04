@@ -1,6 +1,5 @@
 import Home from "./home";
 import Login from "./login";
-import Signup from "./signup";
 import Profile from "./profile";
 import Search from "./search";
 import Details from "./details";
@@ -10,7 +9,7 @@ import UserList from "./users/list";
 import UserTable from "./users/table";
 import UserDetails from "./users/details";
 import SignIn from "./users/signin";
-import SignUp from "./users/signup";
+import Signup from "./users/signup";
 import Account from "./users/account";
 import store from "./store";
 import { Provider } from "react-redux";
