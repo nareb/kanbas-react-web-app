@@ -10,6 +10,7 @@ import UserList from "./users/list";
 import UserTable from "./users/table";
 import UserDetails from "./users/details";
 import SignIn from "./users/signin";
+import SignUp from "./users/signup";
 import Account from "./users/account";
 import store from "./store";
 import { Provider } from "react-redux";
