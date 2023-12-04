@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import * as client from "./client";
 import * as userClient from "./users/client";
 import * as likesClient from "./likes/client";
+import { useCallback } from "react";
 
 function Details() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -11,29 +12,29 @@ function Details() {
   const { albumId } = useParams();
   const [likes, setLikes] = useState([]);
 
-  const fetchUser = async () => {
+  const fetchUser = useCallback (async () => {
     try {
       const user = await userClient.account();
       setCurrentUser(user);
     } catch (error) {
       setCurrentUser(null);
     }
-  };
+  },[]);
 
-  const fetchAlbum = async () => {
+  const fetchAlbum = useCallback (async () => {
     const album = await client.findAlbumById(albumId);
     setAlbum(album);
-  };
+  }, [albumId]);
 
-  const fetchTracks = async () => {
+  const fetchTracks = useCallback (async () => {
     const tracks = await client.findTracksByAlbumId(albumId);
     setTracks(tracks);
-  };
+  }, [albumId]);
 
-  const fetchLikes = async () => {
+  const fetchLikes = useCallback (async () => {
     const likes = await likesClient.findUsersThatLikeAlbum(albumId);
     setLikes(likes);
-  };
+  }, [albumId]);
 
   const currenUserLikesAlbum = async () => {
     const _likes = await likesClient.createUserLikesAlbum(
@@ -48,7 +49,7 @@ function Details() {
     fetchTracks();
     fetchUser();
     fetchLikes();
-  }, []);
+  }, [fetchAlbum, fetchTracks, fetchUser, fetchLikes]);
 
   return (
     <div>

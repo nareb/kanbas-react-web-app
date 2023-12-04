@@ -5,6 +5,7 @@ import * as likesClient from "../likes/client";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import * as followsClient from "../follows/client";
+import { useCallback } from "react";
 function UserDetails() {
   const [user, setUser] = useState(null);
   const [likes, setLikes] = useState([]);
@@ -13,15 +14,15 @@ function UserDetails() {
   // const [currentUser, setCurrentUser] = useState(null); // [1
   const { currentUser } = useSelector((state) => state.userReducer);
   const { id } = useParams();
-  const fetchLikes = async () => {
+  const fetchLikes = useCallback(async () => {
     const likes = await likesClient.findAlbumsThatUserLikes(id);
     setLikes(likes);
-  };
+  }, [id]);
   const navigate = useNavigate();
-  const fetchUser = async () => {
+  const fetchUser = useCallback(async () => {
     const user = await client.findUserById(id);
     setUser(user);
-  };
+  }, [id]);
   const updateUser = async () => {
     //const status = await client.updateUser(id, user);
     await client.updateUser(id, user);
@@ -39,14 +40,14 @@ function UserDetails() {
     //const status = await followsClient.userUnfollowsUser(id);
     await followsClient.userUnfollowsUser(id);
   };
-  const fetchFollowers = async () => {
+  const fetchFollowers = useCallback(async () => {
     const followers = await followsClient.findFollowersOfUser(id);
     setFollowers(followers);
-  };
-  const fetchFollowing = async () => {
+  }, [id]);
+  const fetchFollowing = useCallback(async () => {
     const following = await followsClient.findFollowedUsersByUser(id);
     setFollowing(following);
-  };
+  }, [id]);
   // const fetchCurrentUser = async () => {
   //   const user = await client.account();
   //   setCurrentUser(user);
@@ -62,7 +63,7 @@ function UserDetails() {
     fetchFollowers();
     fetchFollowing();
     // fetchCurrentUser();
-  }, [id]);
+  }, [fetchUser, fetchLikes, fetchFollowers, fetchFollowing]);
   return (
     <div>
       {currentUser && currentUser._id !== id && (

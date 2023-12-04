@@ -3,18 +3,22 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./reducer";
+import { useCallback } from "react";
+
 function Account() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const fetchUser = async () => {
+
+  const fetchUser = useCallback (async () => {
     try {
       const user = await client.account();
       setUser(user);
     } catch (error) {
       navigate("/project/signin");
     }
-  };
+  }, [navigate]);
+
   const updateUser = async () => {
     //const status = await client.updateUser(user._id, user);
     await client.updateUser(user._id, user);
@@ -27,7 +31,8 @@ function Account() {
   };
   useEffect(() => {
     fetchUser();
-  }, []);
+  }, [fetchUser]);
+  
   return (
     <div>
       <h1>Account</h1>
