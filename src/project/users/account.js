@@ -35,18 +35,21 @@ function Account() {
           <input
             type="email"
             className="form-control"
+            placeholder="Email"
             value={user.email}
             onChange={(e) => setUser({ ...user, email: e.target.value })}
           />
           <input
             type="text"
             className="form-control"
+            placeholder="First Name"
             value={user.firstName}
             onChange={(e) => setUser({ ...user, firstName: e.target.value })}
           />
           <input
             type="text"
             className="form-control"
+            placeholder="Last Name"
             value={user.lastName}
             onChange={(e) => setUser({ ...user, lastName: e.target.value })}
           />
