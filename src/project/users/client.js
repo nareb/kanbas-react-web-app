@@ -51,3 +51,13 @@ export const deleteUser = async (id) => {
   const response = await request.delete(`${USERS_API}/${id}`);
   return response.data;
 };
+
+export const checkUsernameAvailability = async (username) => {
+  try {
+    const response = await axios.get(`${USERS_API}/checkUsername/${username}`);
+    return response.data.available;
+  } catch (error) {
+    console.error("Error checking username availability:", error);
+    return null;
+  }
+};
