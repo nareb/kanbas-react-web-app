@@ -23,17 +23,20 @@ function UserDetails() {
     setUser(user);
   };
   const updateUser = async () => {
-    const status = await client.updateUser(id, user);
-  };
+    //const status = await client.updateUser(id, user);
+    await client.updateUser(id, user);
   const deleteUser = async (id) => {
-    const status = await client.deleteUser(id);
+    //const status = await client.deleteUser(id);
+    await client.deleteUser(id);
     navigate("/project/users");
   };
   const followUser = async () => {
-    const status = await followsClient.userFollowsUser(id);
+    //const status = await followsClient.userFollowsUser(id);
+    await followsClient.userFollowsUser(id);
   };
   const unfollowUser = async () => {
-    const status = await followsClient.userUnfollowsUser(id);
+    //const status = await followsClient.userUnfollowsUser(id);
+    await followsClient.userUnfollowsUser(id);
   };
   const fetchFollowers = async () => {
     const followers = await followsClient.findFollowersOfUser(id);

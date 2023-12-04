@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { API_KEY } from "./client";
+//import { API_KEY } from "./client";
 import * as client from "./client";
 import { Link, useParams, useNavigate } from "react-router-dom";
 

@@ -1,9 +1,10 @@
 import Home from "./home";
-import Login from "./login";
-import Profile from "./profile";
+//import Login from "./login";
+//import Profile from "./profile";
 import Search from "./search";
 import Details from "./details";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
+//import { Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import UserList from "./users/list";
 import UserTable from "./users/table";
@@ -17,7 +18,7 @@ import Navigation from "./nav";
 import CurrentUser from "./users/currentUser";
 
 function Project() {
-  const [key, setKey] = useState("home");
+  //const [key, setKey] = useState("home");
 
   return (
     <Provider store={store}>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, Navigate } from "react-router-dom";
+//import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { BsFillCheckCircleFill, BsPencil, BsTrash3Fill, BsPlusCircleFill }
   from "react-icons/bs";
 import * as client from "./client";
@@ -44,7 +45,8 @@ function UserTable() {
 
   const updateUser = async () => {
     try {
-    const status = await client.updateUser(user);
+    //const status = await client.updateUser(user);
+    await client.updateUser(user);
     setUsers(users.map((u) => (u._id === user._id ? user : u)));
     } catch (err) {
     console.log(err);

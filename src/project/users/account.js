@@ -16,10 +16,12 @@ function Account() {
     }
   };
   const updateUser = async () => {
-    const status = await client.updateUser(user._id, user);
+    //const status = await client.updateUser(user._id, user);
+    await client.updateUser(user._id, user);
   };
   const signout = async () => {
-    const status = await client.signout();
+    //const status = await client.signout();
+    await client.signout();
     dispatch(setCurrentUser(null));
     navigate("/project/signin");
   };

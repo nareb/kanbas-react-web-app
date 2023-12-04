@@ -1,6 +1,8 @@
 import * as client from "./client";
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+//import { useEffect, useState } from "react";
+import { useState } from "react";
+//import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./reducer";
 function SignIn() {
