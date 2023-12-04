@@ -7,6 +7,7 @@ import Details from "./details";
 import { Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import UserList from "./users/list";
+import UserTable from "./users/table";
 import UserDetails from "./users/details";
 import SignIn from "./users/signin";
 import Account from "./users/account";
@@ -37,6 +38,7 @@ function Project() {
                 <Route path="/search/:search" element={<Search />} />
                 <Route path="/details/:albumId" element={<Details />} />
                 <Route path="/users" element={<UserList />} />
+                <Route path="/admin/users" element={<UserTable />} />
                 <Route path="/users/:id" element={<UserDetails />} />
               </Routes>
             </div>

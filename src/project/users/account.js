@@ -53,13 +53,16 @@ function Account() {
           <button onClick={updateUser} className="btn btn-primary">
             Update
           </button>
+
           <button onClick={signout} className="btn btn-danger">
             Sign Out
           </button>
           {user.role === "ADMIN" && (
-            <Link to="/project/users" className="btn btn-warning">
-              Users
+
+            <Link to="/project/admin/users" className="btn btn-warning">
+            Users
             </Link>
+
           )}
         </div>
       )}

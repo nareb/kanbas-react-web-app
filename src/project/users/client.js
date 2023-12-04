@@ -31,6 +31,11 @@ export const findUserById = async (id) => {
   return response.data;
 };
 
+export const createUser = async (user) => {
+  const response = await axios.post(`${USERS_API}`, user);
+  return response.data;
+};
+
 export const updateUser = async (id, user) => {
   const response = await request.put(`${USERS_API}/${id}`, user);
   return response.data;
