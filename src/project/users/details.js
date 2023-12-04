@@ -5,7 +5,6 @@ import * as likesClient from "../likes/client";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import * as followsClient from "../follows/client";
-
 function UserDetails() {
   const [user, setUser] = useState(null);
   const [likes, setLikes] = useState([]);
@@ -26,6 +25,7 @@ function UserDetails() {
   const updateUser = async () => {
     //const status = await client.updateUser(id, user);
     await client.updateUser(id, user);
+  };
   const deleteUser = async (id) => {
     //const status = await client.deleteUser(id);
     await client.deleteUser(id);
@@ -56,7 +56,6 @@ function UserDetails() {
       return follows.follower._id === currentUser._id;
     });
   };
-  
   useEffect(() => {
     fetchUser();
     fetchLikes();
@@ -144,5 +143,5 @@ function UserDetails() {
     </div>
   );
 }
-}
+
 export default UserDetails;
