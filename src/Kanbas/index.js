@@ -1,26 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Route, Routes, Navigate } from "react-router";
 import KanbasNavigation from "./KanbasNavigation";
 import Courses from "./Courses";
 import Account from "./Account";
 import Dashboard from "./Dashboard";
+
 //import db from "./Database";
 
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
   //const URL = "http://localhost:4000/api/courses";
-  const URL = "https://kanbas-node-server-app-fa23-93c731197fdb.herokuapp.com/api/courses"
+  //const URL = "https://kanbas-node-server-app-fa23-93c731197fdb.herokuapp.com/api/courses"
+  const API_BASE = process.env.REACT_APP_API_BASE;
+  const MODULES_URL = `${API_BASE}/modules`;
+  const COURSES_URL = `${API_BASE}/courses`;
 
-  const findAllCourses = async () => {
-  const response = await axios.get(URL);
-  setCourses(response.data);
-  };
+  console.log("API_BASE:", API_BASE);
+  console.log("COURSES_URL:", COURSES_URL);
+  console.log("MODULES_URL:", MODULES_URL);
+
+  const findAllCourses = useCallback(async () => {
+    const response = await axios.get(COURSES_URL);
+    setCourses(response.data);
+  }, [COURSES_URL, setCourses]);
 
   useEffect(() => {
   findAllCourses();
-  }, []);
+  }, [findAllCourses]);
 
   /*const addCourse = async () => {
     const response = await axios.post(URL, courses);
