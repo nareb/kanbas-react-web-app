@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "./reducer";
 import * as client from "./client";
 
 function Signup() {
@@ -9,6 +11,7 @@ function Signup() {
     password: "" });
   const [usernameAvailable, setUsernameAvailable] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const checkUsernameAvailability = async (username) => {
     try {
@@ -27,6 +30,9 @@ function Signup() {
   const signup = async () => {
     try {
       await client.signup(credentials);
+      // Fetch user information after signing up
+      const user = await client.signin(credentials);
+      dispatch(setCurrentUser(user));
       navigate("/project/account");
     } catch (err) {
       //if (err.response && err.response.data) {
