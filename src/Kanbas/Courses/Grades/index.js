@@ -1,4 +1,3 @@
-import React from "react";
 import db from "../../Database";
 import { useParams } from "react-router-dom";
 function Grades() {
@@ -11,24 +10,19 @@ function Grades() {
       <div className="table-responsive">
         <table className="table">
           <thead>
-            <tr>
             <th>Student Name</th>
-            {assignments.map((assignment) => (<th key={assignment.id}>{assignment.title}</th>))}
-            </tr>
+            {assignments.map((assignment) => (<th>{assignment.title}</th>))}
           </thead>
           <tbody>
             {enrollments.map((enrollment) => {
               const user = db.users.find((user) => user._id === enrollment.user);
-              const userId = user._id;
               return (
-                <tr key={userId}>
+                <tr>
                    <td>{user.firstName} {user.lastName}</td>
                    {assignments.map((assignment) => {
                      const grade = db.grades.find(
-                       (grade) => grade.student === userId && grade.assignment === assignment._id);
-                   return (<td key={assignment._id}>{grade?.grade || ""}</td>);
-                   })}
-                       
+                       (grade) => grade.student === enrollment.user && grade.assignment === assignment._id);
+                       return (<td>{grade?.grade || ""}</td>);})}
                 </tr>);
             })}
           </tbody></table>

@@ -30,9 +30,9 @@ function Project() {
             <div className="col-10">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/login" element={<SignIn />} />
+                <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<Signup />} />
-                <Route path="/profile" element={<Account />} />
+                <Route path="/account" element={<Account />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/search/:search" element={<Search />} />
                 <Route path="/details/:albumId" element={<Details />} />

@@ -6,6 +6,8 @@ function Nav() {
      <Link className="nav-link" to="/Labs/a4">A4</Link>
      <Link className="nav-link" to="/hello">Hello</Link>
      <Link className="nav-link" to="/Kanbas">Kanbas</Link>
+     <Link className="nav-link" to="/Project">Project</Link>
+
 </nav>
 ); }
 export default Nav;

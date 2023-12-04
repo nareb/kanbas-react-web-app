@@ -19,7 +19,7 @@ function UserList() {
 
   return (
     <div>
-      {currentUser && currentUser.role === "ADMIN" && (
+      {/* {currentUser && currentUser.role === "ADMIN" && ( */}
         <>
           <h2>Users</h2>
           <div className="list-group">
@@ -34,10 +34,10 @@ function UserList() {
             ))}
           </div>
         </>
-      )}
+      {/* )}
       {currentUser && currentUser.role !== "ADMIN" && (
         <Navigate to="/project/signin" />
-      )}
+      )} */}
     </div>
   );
 }
