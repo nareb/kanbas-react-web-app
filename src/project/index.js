@@ -29,6 +29,7 @@ function Project() {
             <div className="col-2">
               <Navigation />
             </div>
+
             <div className="col-10">
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -43,6 +44,7 @@ function Project() {
                 <Route path="/users/:id" element={<UserDetails />} />
               </Routes>
             </div>
+            
           </div>
         </div>
       </CurrentUser>
