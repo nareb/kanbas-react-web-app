@@ -43,3 +43,13 @@ export const signout = async () => {
   const response = await request.post(`${USERS_API}/signout`);
   return response.data;
 };
+
+export const checkUsernameAvailability = async (username) => {
+  try {
+    const response = await request.get(`${USERS_API}/checkUsername/${username}`);
+    return response.data.available;
+  } catch (error) {
+    console.error("Error checking username availability:", error);
+    return null;
+  }
+}
