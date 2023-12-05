@@ -21,8 +21,8 @@ function Project() {
   //const [key, setKey] = useState("home");
 
   return (
-    <Provider store={store}>
-      <CurrentUser>
+    //<Provider store={store}>
+      //<CurrentUser>
         <div className="container-fluid">
           <h1>Project</h1>
           <div className="row">
@@ -47,8 +47,8 @@ function Project() {
             
           </div>
         </div>
-      </CurrentUser>
-    </Provider>
+      //</CurrentUser>
+    //</Provider>
   );
 }
 
