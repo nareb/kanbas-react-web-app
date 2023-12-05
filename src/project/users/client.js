@@ -4,11 +4,11 @@ const request = axios.create({
   withCredentials: true,
 });
 
-const API_BASE = process.env.REACT_APP_API_BASE_URL || "http://localhost:4000";
+const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:4000";
 const USERS_API = `${API_BASE}/api/users`;
 
 export const signup = async (credentials) => {
-    const response = await axios.post(
+    const response = await request.post(
     `${USERS_API}/signup`, credentials);
     return response.data;
 };
@@ -38,7 +38,7 @@ export const findUserById = async (id) => {
 };
 
 export const createUser = async (user) => {
-  const response = await axios.post(`${USERS_API}`, user);
+  const response = await request.post(`${USERS_API}`, user);
   return response.data;
 };
 
@@ -54,7 +54,7 @@ export const deleteUser = async (id) => {
 
 export const checkUsernameAvailability = async (username) => {
   try {
-    const response = await axios.get(`${USERS_API}/checkUsername/${username}`);
+    const response = await request.get(`${USERS_API}/checkUsername/${username}`);
     return response.data.available;
   } catch (error) {
     console.error("Error checking username availability:", error);
